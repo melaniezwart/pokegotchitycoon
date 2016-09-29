@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core" >
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="resources/tamastyle.css" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="bootstrap.js"></script>
+  <link rel="stylesheet" type="text/css" href="bootstrap.css" />
+
+
+
+  <title>Tamagotchi</title>
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+  <script>
+  // bars slide
+  //$(function() {
+  //  $(".meter > span").each(function() {
+  //    $(this)
+  //    .data("origWidth", $(this).width())
+  //    .width(0)
+  //    .animate({
+  //      width: $(this).data("origWidth")
+  //    }, 1200);
+  //  });
+  //});
+
+// creature moves
+setInterval(toggle, 3000);
+
+function toggle() {
+ $('.content').toggleClass('visible');
+}
+</script>
+
+</head>
+<body>
+<h:form>
+  <div class="box">
+    <div id="actions">
+   <ul>
+      	<li><h:commandButton actionListener="#{game.eatMeal()}" image="/resources/Dinner.png" styleClass="btn-circle" height="60" width="60"></h:commandButton></li>
+        <li><h:commandButton actionListener="#{game.eatSnack()}" image="/resources/Snack.png" styleClass="btn-circle" height="60" width="60"></h:commandButton></li>
+        <li><h:commandButton actionListener="#{game.attention()}" image="resources/Attention.png" width="60" height="60" styleClass="btn-circle" /></li>
+        <li><h:commandButton actionListener="#{game.wash()}" image="resources/Wash.png" width="60" height="60" styleClass="btn-circle" /></li>
+        <li><h:commandButton actionListener="#{game.sleep()}" image="resources/Sleep.png" width="60" height="60" styleClass="btn-circle" /></li>
+        <li><h:commandButton actionListener="#{game.fitness()}" image="resources/Fitness.png" width="60" height="60" styleClass="btn-circle" /></li>
+        <li><h:commandButton actionListener="#{game.study()}" image="resources/Study.png" width="60" height="60" styleClass="btn-circle" /></li>
+        <li><h:commandButton actionListener="#{game.playCard()}" image="resources/Social.png" width="60" height="60" styleClass="btn-circle" /></li>
+
+      </ul>
+    </div>
+
+
+
+<img src="resources/creature.jpg" alt="Tammo"  class="content visible" />
+<img src="resources/creature2.jpg" alt="Tammo" class="content" />
+
+<div id="textfield">
+<div id="text">
+  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati id doloribus, repudiandae quae non. </p>
+  </div>
+  <h:commandButton actionListener="#{game.yes()}" image="resources/Wash.png" styleClass="yes" height="60" width="60" />
+  <h:commandButton actionListener="#{game.no()}" image="resources/Dinner.png" styleClass="no" height="60" width="60" />
+</div>
+
+<div id= "panel">
+  <div class="status">
+  <h:commandButton actionListener="#{game.startGame()}" />
+  <p id="naam">#{game.getName()}</p>
+    <p> Age: #{game.getAge()} dagen </p>
+    <p> Intelligence: level #{game.getIntel()} </p>
+    <p> Fitness: level #{game.getFitness()} </p>
+    <p> Social: level #{game.getSocial()}</p>
+  </div>
+
+ <div class="meters">
+    <p>Hunger:</p>
+    <div class="progress">
+      <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" 
+      aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:#{game.getHunger()}%">
+        #{game.getHunger()}%
+      </div>
+    </div>
+    <p>Hygiene:</p>
+    <div class="progress">
+      <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar"
+      aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:#{game.getHygiene()}%">
+      #{game.getHygiene()}%
+    </div>
+  </div>
+  <p>Happiness:</p>
+  <div class="progress">
+    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+    aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:#{game.getHappy()}%">
+    #{game.getHappy()}%
+  </div>
+</div>
+<p>Sleep:</p>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped active" role="progressbar"
+  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:#{game.getSleep()}%">
+  #{game.getSleep()}%
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</h:form>
+
+</body>
+</html>
