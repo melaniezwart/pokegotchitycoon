@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:h = "http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="resources/loginstyle.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<ul>
+    <li><a href="start.xhtml" > start</a></li>
+    <li><a href="login.xhtml" > login </a></li>
+    <li><a href="home.xhtml" > home </a></li>
+  </ul>
+
+<div class="container">
+  <div class="row">
+   <div class="col-md-4"></div>
+  <div class="col-md-4" id="form">
+  <h2>Welcome!</h2>
+ <h:form>
+ 
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <h:inputText value="#{bean.username}"></h:inputText>
+      
+<!--       <input type="username" class="form-control" id="username" placeholder="Enter username"/> -->
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <h:inputSecret value="#{bean.password}"></h:inputSecret>
+<!--       <input type="password" class="form-control" id="pwd" placeholder="Enter password"/> -->
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox"/> Remember me</label>
+    </div>
+    <h:commandButton action="#{bean.login()}" value="Login"></h:commandButton>
+    <h:commandButton action="#{bean.register()}" value="Register"></h:commandButton>
+<!--     <button type="submit" class="btn btn-default">Login</button>
+    <button type="submit" class="btn btn-default">Register</button> -->
+  </h:form>
+  <h:form>
+  <h:inputText value="#{bean.username}"></h:inputText>
+  <h:inputSecret value="#{bean.password}"></h:inputSecret>
+  <h:commandButton action="#{bean.register}" value="Register"></h:commandButton>
+  </h:form>
+  
+ <!--  <h:dataTable value="#{methods.authors}" var="c">
+  	<h:column><f:facet name="header">ID</f:facet>#{c.id}</h:column>
+  	<h:column><f:facet name="header">User</f:facet>#{c.name}</h:column>
+  	<h:column><f:facet name="header">Pass</f:facet>#{c.password}</h:column>
+  	<h:column><f:facet name="header">Tama</f:facet>#{c.tamas}</h:column>
+  </h:dataTable> -->
+</div>
+ <div class="col-md-4"></div> 
+</div>
+</div>
+
+</body>
+</ui:composition>
