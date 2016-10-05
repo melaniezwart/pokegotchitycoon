@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="resources/startstyle.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<ul>
+    <li><a href="start.xhtml" > start</a></li>
+    <li><a href="login.xhtml" > login </a></li>
+    <li><a href="home.xhtml" > home </a></li>
+  </ul>
+
+<div class="container">
+  <div class="row">
+   <div class="col-md-4"></div>
+  <div class="col-md-4" id="form">
+  <img src="resources/egg.png" alt="egg"> </img>
+  <p>The egg you've been given is about to hatch. What would you like to name your tamagotchi?</p>
+    <div class="form-group">
+    <h:form>
+      <label for="name">Tamagotchi name:</label>
+      <h:inputText value="#{bean.tamaName}" styleClass="form-control"></h:inputText>
+    
+    <h:commandButton action="#{bean.createTama()}" styleClass="btn btn-default"></h:commandButton>
+    </h:form>
+    </div>
+</div>
+ <div class="col-md-4"></div>
+</div>
+</div>
+
+</body>
+</html>
